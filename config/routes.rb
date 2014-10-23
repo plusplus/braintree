@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :donations, only: %w(new create show)
+  resource :donation, only: %w(new create show)
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
