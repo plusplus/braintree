@@ -1,3 +1,13 @@
 <h1>Thanks for making a donation to our super awesome project!</h1>
 
-<%= @client_token %>
+<%= form_tag donation_path do %>
+  <div id="checkout"></div>
+  <button type="submit">Donate!</button>
+<%- end %>
+
+
+<script>
+  braintree.setup("<%= j(@client_token) %>", "dropin", {
+    container: "checkout"
+  });
+</script>
