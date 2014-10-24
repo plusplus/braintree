@@ -1,4 +1,8 @@
-<h1>Thanks for making a donation to our super awesome project!</h1>
+<h1>Thanks for making a pledge to our super kickziblegogostarter project!</h1>
+
+<%- if flash[:warning] %>
+  <p class="error"><strong><%= flash[:warning] %></strong></p>
+<%- end %>
 
 <%= form_tag donation_path do %>
   <div id="checkout"></div>
