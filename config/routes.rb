@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root     'pledges#new'
-  resource :pledges, only: %w(new create show)
+  resources :pledges, only: %w(new create show)
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
