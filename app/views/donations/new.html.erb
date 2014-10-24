@@ -4,11 +4,20 @@
   <p class="error"><strong><%= flash[:warning] %></strong></p>
 <%- end %>
 
-<%= form_tag donation_path do %>
-  <div id="checkout"></div>
-  <button type="submit">Donate!</button>
-<%- end %>
+<%= form_for @pledge do |form| %>
+  <p>
+    <%= form.label :name %><br/>
+    <%= form.text_field :name %>
+  </p>
 
+  <p>
+    <%= form.label :amount %><br/>
+    <%= form.text_field :amount %>
+  </p>
+
+  <div id="checkout"></div>
+  <button type="submit">Pledge!</button>
+<%- end %>
 
 <script>
   braintree.setup("<%= j(@client_token) %>", "dropin", {

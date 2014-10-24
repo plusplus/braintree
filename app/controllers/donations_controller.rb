@@ -1,6 +1,7 @@
 class DonationsController < ApplicationController
   def new
     @client_token = Braintree::ClientToken.generate
+    @pledge       = Pledge.new
   end
 
   def create
