@@ -6,13 +6,19 @@
 
 <%= form_for @pledge do |form| %>
   <p>
-    <%= form.label :name %><br/>
+    <%= form.label :name %>
     <%= form.text_field :name %>
+    <%- if @pledge.errors.has_key?(:name) %>
+      <strong><%= @pledge.errors[:name].join(", ") %></strong>
+    <%- end %>
   </p>
 
   <p>
     <%= form.label :amount %><br/>
     <%= form.text_field :amount %>
+    <%- if @pledge.errors.has_key?(:amount) %>
+      <strong><%= @pledge.errors[:amount].join(", ") %></strong>
+    <%- end %>
   </p>
 
   <div id="checkout"></div>
