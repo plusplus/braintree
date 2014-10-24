@@ -1,1 +1,13 @@
 <h1>Thank you! You are awesome!</h1>
+
+
+<p>Your pledge details:</p>
+
+<dl>
+<dt>Name</dt>
+<dd><%= @pledge.name %></dd>
+<dt>Amount</dt>
+<dd>$<%= @pledge.amount %></dd>
+<dt>Reference</dt>
+<dd><%= @pledge.transaction_reference %></dd>
+</dl>
